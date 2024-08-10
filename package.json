@@ -2,10 +2,22 @@
   "name": "portfolio-clean",
   "packageManager": "yarn@4.3.1",
   "type": "module",
+  "private": true,
   "workspaces": [
     "packages/*"
   ],
-  "dependencies": {
-    "typescript": "^5.5.2"
+  "scripts": {
+    "pre-commit": "lint-staged",
+    "lint": "eslint . --fix",
+    "test": "yarn workspaces foreach -A -tv run test --run",
+    "postinstall": "husky install",
+    "build": "yarn workspaces foreach -A -tv run build"
+  },
+  "devDependencies": {
+    "@types/eslint": "^9",
+    "eslint": "^9.9.0",
+    "husky": "^9.1.4",
+    "prettier": "^3.3.3",
+    "typescript": "^5.5.4"
   }
 }
