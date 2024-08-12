@@ -1517,6 +1517,7 @@ __metadata:
   resolution: "app-domain@workspace:packages/domain"
   dependencies:
     typescript: "npm:^5.5.4"
+    vitest: "npm:^2.0.5"
   languageName: unknown
   linkType: soft
 
