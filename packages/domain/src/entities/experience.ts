@@ -1,7 +1,8 @@
 export interface Experience {
   id: string;
+  title: string;
+  workplace: string;
   startDate: string;
   finishDate?: string;
-  title: string
-  
+  description: string[];
 }
