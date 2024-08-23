@@ -1,9 +1,4 @@
 import { Banner } from "../entities/banner";
+import { ServiceTemplate } from "./service-template";
 
-export interface BannerService {
-  getAll: () => Banner[];
-  add: (banner: Banner) => void;
-  remove: (id: string) => void;
-  update: (banner: Banner) => void;
-  getOne: (id: string) => Banner | null;
-}
+export interface BannerService extends ServiceTemplate<Banner> {}
