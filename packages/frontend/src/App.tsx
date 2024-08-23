@@ -2,15 +2,17 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.scss";
-import { About } from "app-domain";
+import { Banner } from "app-domain";
 
 function App() {
   const [count, setCount] = useState(0);
-  const item: About = {
+  const item: Banner = {
     description: "Item desc",
-    fullName: "Item uno",
-    image: "www.google.com",
+    name: "Item uno",
+    bannerImg: "www.google.com",
     title: "Item",
+    id: "1",
+    userImg: "www.facebook.com",
   };
   return (
     <>
@@ -28,7 +30,7 @@ function App() {
           count is {count}
         </button>
         <p>
-          Edit <code>src/App.tsx</code> and save to test {item.fullName}
+          Edit <code>src/App.tsx</code> and save to test {item.name}
         </p>
       </div>
       <p className="read-the-docs">
