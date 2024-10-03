@@ -1,0 +1,1 @@
+export type UseCase = (deps:any, payload: any) => Promise<unknown>
