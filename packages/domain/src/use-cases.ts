@@ -1,5 +1,5 @@
 import getAllStyles from "./use-cases/page-styles/get-all-styles";
-import { UseCase } from "./utils/type/use-case";
+import { UseCase } from "./utils/types/use-case";
 
 export interface UseCaseDeclaration {
   authRequired?: boolean;
