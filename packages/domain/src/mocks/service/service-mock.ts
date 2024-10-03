@@ -1,5 +1,3 @@
-import { PageStyle } from "../../entities/pageStyle";
-import { PageStyleService } from "../../services/page-style-service";
 import { ServiceTemplate } from "../../services/service-template";
 import { ms } from "../../utils/time/ms";
 
@@ -13,6 +11,9 @@ export function mockService<T extends { id: string }>(
 ): MockedServiceTemplate<T> {
   return {
     info: info ? [...info] : ([] as T[]),
+    async findById(id) {
+      return this.info.find((item) => item.id == id);
+    },
     async add(item) {
       await ms(100);
       this.info.push(item);

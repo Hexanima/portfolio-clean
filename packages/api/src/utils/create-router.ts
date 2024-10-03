@@ -5,9 +5,11 @@ import UseCaseHandler from "./usecase-handler";
 export function createRouter(): Router {
   const router = Router();
 
-  for (const key in UseCaseRecord) {
-    const { useCase } = UseCaseRecord[key];
-    router.post(`/${key}`, UseCaseHandler(useCase));
+  for (const name in UseCaseRecord) {
+    console.log("Loading " + name)
+    const { useCase } = UseCaseRecord[name];
+
+    router.get("/" + name, UseCaseHandler(useCase));
   }
 
   return router;

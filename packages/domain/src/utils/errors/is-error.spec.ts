@@ -1,5 +1,5 @@
 import { describe, expect, test } from "vitest";
-import IsError from "./is-error";
+import {IsError} from "./is-error";
 import { Language } from "../../entities/language";
 
 describe("IsError Test", () => {

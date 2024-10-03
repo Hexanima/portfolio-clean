@@ -16,4 +16,9 @@ export * from "./services/page-style-service";
 export * from "./services/project-service";
 
 // Use Cases
+export * from "./utils/types/use-case"
 export * from "./use-cases"
+
+// Utils
+
+export * from "./utils/errors/is-error"

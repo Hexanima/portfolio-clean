@@ -1,3 +1,1 @@
-const DEPENDENCIES = {}
-
-export default DEPENDENCIES
+export const DEPENDENCIES = {};

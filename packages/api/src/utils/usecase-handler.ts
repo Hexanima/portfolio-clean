@@ -1,14 +1,16 @@
-import { UseCase } from "app-domain/dist/utils/type/use-case";
+import { UseCase, IsError } from "app-domain";
 import { RequestHandler } from "express";
-import DEPENDENCIES from "../dependencies";
-export default function UseCaseHandler(
-  useCase: UseCase,
-): RequestHandler {
+import { DEPENDENCIES } from "../dependencies";
+export default function UseCaseHandler(useCase: UseCase): RequestHandler {
   return async (req, res) => {
     try {
-        return res.status(200).json(await useCase(DEPENDENCIES, req))
+      const result = await useCase({ ...DEPENDENCIES }, req.body);
+
+      if (IsError(result)) return res.status(400).json(result);
+      return res.status(200).json(result);
     } catch (error) {
-        res.status(500).json(error)
+      console.log(error);
+      res.status(500).json(error);
     }
   };
 }
