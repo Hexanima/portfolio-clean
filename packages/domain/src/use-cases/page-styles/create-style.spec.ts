@@ -92,12 +92,12 @@ describe("", () => {
     if (!currentUser) throw new Error("Not found user");
 
     const newStyle: Omit<PageStyle, "id"> = {
-      backgroundColor: "marron",
-      fontColor: "marron",
-      fontFamily: "marron",
-      name: "marron",
-      primaryColor: "marron",
-      secondaryColor: "marron",
+      backgroundColor: "black",
+      fontColor: "black",
+      fontFamily: "black",
+      name: "black",
+      primaryColor: "black",
+      secondaryColor: "black",
     };
 
     const result = await createStyle(
